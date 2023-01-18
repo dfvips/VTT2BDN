@@ -115,16 +115,16 @@ ${Events}
                 sup.EndTime = string.Format("{0:00}:{1:00}:{2:00}:{3:00}", s.EndTime.Hours, s.EndTime.Minutes, s.EndTime.Seconds, endFrame);
                 sup.ExactStartTime = s.StartTime;
                 sup.ExactEndTime = s.EndTime;
-                sup.X = (int)((resW / 2.0) - (imgW / 2.0));
+                sup.X = resW - imgW - paddingSide;
                 sup.Y = resH - imgH - paddingBottom;
-                if (s.Style.Contains("line-right"))
-                {
-                    sup.X = resW - paddingSide - imgW;
-                }
-                else if (s.Style.Contains("line-left"))
-                {
-                    sup.X = paddingSide;
-                }
+                //if (s.Style.Contains("line-right"))
+                //{
+                //    sup.X = resW - paddingSide - imgW;
+                //}
+                //else if (s.Style.Contains("line-left"))
+                //{
+                //    sup.X = paddingSide;
+                //}
                 sup.FileName = s.Payload;
                 list.Add(sup);
             }
